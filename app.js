@@ -284,3 +284,6 @@ app.post("/", (req, res) => {
 
 
 // Starting the server
+app.listen(port, () => {
+  console.log(`Server is running on localhost:${port}`);
+});
