@@ -1,8 +1,11 @@
 import express from "express";
+
 import axios from "axios";
 import bodyParser from "body-parser";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 const port = 3000;
@@ -11,7 +14,8 @@ app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({ extended: "true" }));
 
 const API_URL = "https://api.openweathermap.org/data/2.5/weather";
-const API_Key = "6de9af58cfd761721cbdb6ce2dfbbec3";
+const API_Key = process.env.API_KEY;
+
 
 console.log("Serving static files from: ", __dirname + "/public");
 
