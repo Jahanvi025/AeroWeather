@@ -5,7 +5,7 @@ import bodyParser from "body-parser";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import dotenv from "dotenv";
-import { log } from "console";
+import path from 'path';
 dotenv.config();
 
 const app = express();
@@ -21,6 +21,7 @@ const API_Key = process.env.API_KEY;
 console.log("Serving static files from: ", __dirname + "/public");
 
 app.set("view engine", "ejs");
+app.set('views', path.join(__dirname, 'views'));
 
 // Get day and date separately
 const getCurrentTime = () => {
