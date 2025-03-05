@@ -1,0 +1,801 @@
+:root {
+  --primary-color: #aaaaaa; /* Example primary color */
+  --secondary-color: #ffffff; /* Example secondary color */
+  --background-color: #2a2929; /* Example background color */
+  --text-color: #444342; /* Example text color */
+  --yellow-color: #ffd000;
+  --light-primary: #f2f0f0;
+}
+* {
+  padding: 0;
+  margin-top: 0px;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--primary-color);
+  padding: auto;
+  background-size: cover; /* Ensures the image covers the entire container */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents image repetition */
+  width: 100%; /* Full width */
+  min-height: 90.6vh;
+  margin: auto;
+}
+
+.contain {
+  width: 90%;
+  height: 80vh;
+  margin: auto;
+  margin-top: 65px;
+  border-radius: 20px;
+  background-color: var(--light-primary);
+  display: flex;
+  justify-content: flex-start;
+}
+.section {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 27%;
+  background-color: white;
+  border-radius: 20px 0px 0px 20px;
+}
+.two {
+  height: 100%;
+  width: 80%;
+  border-radius: 0px 20px 20px 0px;
+  background-color: var(--light-primary);
+}
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+html {
+  font-size: 62.5%;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* SEARCH BAR CONTAINER */
+.search-local {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  column-gap: 2rem;
+  padding-left: 2rem;
+  background: var(--white);
+  border-radius: 1rem;
+  min-height: 7rem;
+  height: auto;
+  border: 0.1rem solid var(--black);
+  border-right: none;
+}
+
+/* ICON */
+.icon {
+  color: black;
+  font-size: 3.5rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon:hover {
+  animation: funny-icon 0.4s ease-in-out;
+}
+
+@keyframes funny-icon {
+  0% {
+    scale: 1;
+  }
+
+  50% {
+    scale: 0.8;
+    transform-origin: bottom;
+    transform: rotate(-15deg);
+  }
+
+  100% {
+    scale: 1;
+  }
+}
+
+/* INPUT */
+.search-local input {
+  height: 100%;
+  width: 100%;
+  flex: 1 1 25rem;
+  background: var(--white);
+  display: flex;
+  outline: none;
+  border: none;
+  color: var(--black);
+  font-size: 14px;
+}
+
+input[type="text"]::placeholder {
+  color: var(--black);
+  font-size: 12px;
+}
+
+/* BUTTON */
+.search-local button {
+  background: var(--red);
+  border: none;
+  border-radius: 0 1rem 1rem 0;
+  font-weight: 500;
+  font-size: 2.4rem;
+  height: 7rem;
+  width: 18rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+button a {
+  color: var(--white);
+}
+
+.search-local button .search-icon {
+  display: none;
+}
+
+.search-local button:hover {
+  letter-spacing: 0.5rem;
+}
+
+.weather_icon_img img {
+  width: 150px;
+  height: 150px;
+}
+.weather_icon_img {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.temp {
+  text-align: center;
+  font-size: 6rem;
+  font-weight: 400;
+}
+.day {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.day span {
+  color: rgb(152, 150, 150);
+}
+.cloudicon {
+  width: 40px;
+  height: 40px;
+}
+.desc {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 10px;
+}
+.weather {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
+.onehr {
+  width: 80%;
+}
+hr {
+  margin: 0 auto;
+  color: rgb(152, 150, 150);
+}
+.weather1 {
+  margin-top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.placeimg {
+  top: 0%;
+  position: relative;
+  display: flex; /* Enable flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  text-align: center; /* Center text */
+}
+.info {
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-align: center;
+}
+.placeimg p {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 500;
+  position: absolute; /* Absolute positioning for the image */
+}
+
+.placeimg img {
+  width: 250px;
+  height: 100px;
+  border-radius: 20px;
+}
+.today {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.two nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.degrees {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 15px;
+  margin-right: 20px;
+}
+.circle {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+.circle p,
+.time p {
+  margin: 0%;
+}
+.c1 {
+  background-color: black;
+  color: white;
+}
+.c2 {
+  background-color: white;
+  color: black;
+}
+.circle p {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.time p {
+  font-size: 1.5rem;
+  padding-top: 3px;
+}
+.map {
+  height: 120px;
+  overflow: hidden;
+  margin-left: 20px;
+  margin-top: 20px;
+  padding-top: 0px;
+  padding-left: 50px;
+  border-radius: 20px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  background-color: rgb(255, 254, 254);
+}
+.map-desc {
+  color: white;
+}
+.boxes {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+}
+.box1 {
+  margin-left: 20px;
+  margin-top: 20px;
+  width: 330px;
+  height: 120px;
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+}
+.box1 p {
+  font-size: 1.1rem;
+}
+.desc {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.today1 {
+  margin-top: 24px;
+  margin-left: 20px;
+}
+
+.griding {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding-right: 20px;
+  height: 300px;
+}
+.grid-item {
+  width: 90%;
+  height: 120px;
+  background-color: white;
+  margin-top: 20px;
+  margin-left: 20px;
+  border-radius: 20px;
+}
+.grid-item .grid-head {
+  padding-left: 30px;
+  padding-top: 20px;
+  color: var(--primary-color);
+}
+.grid-item .grid-main-desc {
+  font-size: 28px;
+  font-weight: 500;
+}
+.flex-desc {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+.grid-main-desc2 {
+  font-size: 30px;
+  font-weight: 500;
+}
+.flex {
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+}
+.images {
+  padding-left: 20px;
+  width: 70px;
+}
+.image {
+  width: 70px;
+}
+.image2 {
+  width: 65px;
+  padding-left: 10px;
+}
+.image4 {
+  width: 48px;
+  height: 50px;
+  padding-top: 5px;
+  padding-left: 5px;
+}
+.km {
+  font-size: 16px;
+  padding-top: 13px;
+}
+.visible {
+  padding-top: 5px;
+}
+.km2 {
+  font-size: 16px;
+}
+.km3 {
+  font-size: 16px;
+  padding-top: 20px;
+}
+.desc-grid-sec {
+  padding-left: 30px;
+}
+.image3 {
+  width: 30px;
+  height: 30px;
+}
+.sunflex {
+  display: flex;
+  flex-direction: row;
+  padding-left: 25px;
+  gap: 10px;
+}
+/* Initially hidden with 0 opacity */
+.error-message {
+  width: 300px;
+  height: 100px;
+  position: fixed;
+  top: 2%;
+  left: 40%;
+  padding: 10px 20px;
+  text-align: center;
+  background-color: black;
+  font-size: 15px;
+  color: white;
+  border-radius: 20px;
+  opacity: 0; /* Initially hidden */
+  visibility: hidden; /* Ensure it's not clickable */
+  transform: scale(0.5); /* Initial scale for animation */
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease; /* Smooth opening */
+}
+
+/* Button styling */
+.error-message button {
+  border: none;
+  width: 50px;
+  height: 20px;
+  background-color: red;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* When the error message is visible */
+.error-message.show {
+  opacity: 1; /* Fade in */
+  visibility: visible; /* Make it visible */
+  transform: scale(1); /* Grow to full size */
+}
+
+/* Transition on close (fading out) */
+.error-message.hide {
+  opacity: 0; /* Fade out */
+  visibility: hidden; /* Make it non-clickable */
+  transform: scale(0.5); /* Shrink during close */
+}
+
+.sundesc {
+  padding-top: 4px;
+  font-size: 14px;
+}
+@keyframes upDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.weather_icon_img img {
+  animation: upDown 3s ease-in-out infinite;
+}
+
+/* MEDIAS */
+@media (max-width: 575px) {
+  .search-local {
+    padding-left: 0;
+    column-gap: 0.25rem;
+  }
+
+  .search-local button {
+    width: 10rem;
+  }
+
+  button a {
+    display: none;
+  }
+
+  .search-local button .search-icon {
+    display: block;
+    margin-inline: auto;
+    color: var(--white);
+    font-size: 3rem;
+  }
+
+  input[type="text"]::placeholder {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .contain {
+    flex-direction: column;
+    height: auto;
+    min-height: 80vh;
+  }
+
+  .section {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    padding-bottom: 20px;
+  }
+  .grid-item {
+    width: 100%;
+    max-width: 450px;
+  }
+  .two {
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .griding {
+    grid-template-columns: 1fr 1fr;
+    height: auto;
+    padding-bottom: 20px;
+    margin-right: 20px;
+    gap: 20px;
+  }
+
+  .box1 {
+    width: 90%;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .map {
+    width: 90%;
+    margin-right: 20px;
+  }
+
+  .boxes {
+    flex-direction: column;
+  }
+
+  .box1,
+  .map {
+    width: calc(100% - 40px);
+    margin: 10px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .griding {
+    grid-template-columns: 1fr;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: auto;
+  }
+
+  .grid-item {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .box1 {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .map {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .weather_icon_img img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .temp {
+    font-size: 5rem;
+  }
+
+  .placeimg img {
+    width: 220px;
+    height: 90px;
+  }
+
+  .contain {
+    margin-top: 30px;
+    height: auto;
+  }
+
+  .search-local {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .search-local button {
+    width: 12rem;
+    font-size: 1.8rem;
+  }
+
+  .search-local button p {
+    font-size: 1.4rem;
+    margin-top: 2px;
+  }
+}
+
+@media (max-width: 576px) {
+  .weather1 {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .degrees {
+    margin-right: 10px;
+    gap: 10px;
+  }
+
+  .today {
+    margin-left: 10px;
+  }
+
+  .today1 {
+    margin-left: 10px;
+  }
+
+  .grid-item {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .grid-item .grid-head {
+    padding-left: 15px;
+  }
+
+  .desc-grid-sec {
+    padding-left: 15px;
+  }
+
+  .sunflex {
+    padding-left: 15px;
+  }
+
+  .error-message {
+    left: 50%;
+    transform: translateX(-50%) scale(0.5);
+  }
+
+  .error-message.show {
+    transform: translateX(-50%) scale(1);
+  }
+
+  .error-message.hide {
+    transform: translateX(-50%) scale(0.5);
+  }
+  .search-local p{
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .contain {
+    width: 98%;
+    margin-top: 30px;
+  }
+
+  .search-local {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .circle {
+    width: 25px;
+    height: 25px;
+  }
+
+  .circle p {
+    font-size: 1.3rem;
+  }
+
+  .time p {
+    font-size: 1.3rem;
+  }
+
+  .grid-item {
+    height: auto;
+    min-height: 120px;
+    padding-bottom: 15px;
+  }
+
+  .grid-main-desc,
+  .grid-main-desc2 {
+    font-size: 24px;
+  }
+
+  .box1 {
+    height: auto;
+    min-height: 100px;
+  }
+
+  .search-local {
+    min-height: 5rem;
+  }
+
+  .search-local button {
+    height: 5rem;
+    width: 10rem;
+  }
+
+  .search-local button p {
+    font-size: 1.2rem;
+  }
+
+  .icon {
+    font-size: 2.5rem;
+  }
+
+  .temp {
+    font-size: 4rem;
+  }
+
+  .placeimg img {
+    width: 200px;
+    height: 80px;
+  }
+
+  .placeimg p {
+    font-size: 1.5rem;
+  }
+
+  .weather_icon_img img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Fix for very small screens */
+@media (max-width: 360px) {
+  .search-local input {
+    font-size: 12px;
+  }
+
+  input[type="text"]::placeholder {
+    font-size: 10px;
+  }
+
+  .search-local button {
+    width: 8rem;
+  }
+
+  .search-local button p {
+    font-size: 1rem;
+  }
+
+  .grid-item .grid-head {
+    font-size: 14px;
+    padding-top: 10px;
+  }
+
+  .grid-main-desc,
+  .grid-main-desc2 {
+    font-size: 20px;
+  }
+
+  .box1 h2 {
+    font-size: 16px;
+  }
+
+  .box1 p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Fix for landscape orientation on mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .contain {
+    margin-top: 20px;
+    height: auto;
+  }
+
+  .section {
+    padding-bottom: 10px;
+  }
+
+  .weather_icon_img img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .temp {
+    font-size: 3.5rem;
+    margin-bottom: 5px;
+  }
+
+  .day {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .placeimg img {
+    height: 70px;
+  }
+}
+

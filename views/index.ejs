@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/images/cloudy.png"/>
+    <title>AeroWeather</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body style="background-image: url(<%=backgroundImage%>);
+background-blend-mode: multiply; background-repeat: no-repeat;">
+    <% if (errorMessage) { %>
+      <div class="error-message">
+          <p><%= errorMessage %></p>
+          <button onclick="window.location.href='/'">OK</button>
+      </div>
+    <% } %>
+  
+  <div class="contain">
+     <section class="section">
+      <form action="/" method="post" role="search">
+      <div class="search-local">
+        <div class="icon">
+          <ion-icon name="location-outline"></ion-icon>
+        </div>
+      
+        <input type="text" name="searchbar" placeholder="Check Weather in Your City">
+        <button>
+          <p style="margin: none; margin-top: 4px;">Places</p>
+          <ion-icon name="search-outline" class="search-icon"></ion-icon>
+        </button>
+      </div>
+    </form>
+      <div class="weather_icon_img">
+        <img src="<%= bigIcon%>" alt="img">
+      </div>
+      <h1 class="temp"><%= locals.temp %>°C</h1>
+      <p class="day"><%= locals.day %>, <span id="time"><%= time %></span></p>
+      <hr class="onehr">
+      <div class="weather">
+      <img class="cloudicon" src="http://openweathermap.org/img/wn/<%= smallIcon %>@4x.png" alt="icon">
+
+      <p class="desc">Today - <%= main %></p>
+      </div>
+      <p class="info">Cloudiness - <%= cloudiness %>%</p>
+    <div class="placeimg">
+      <p><%= place %>, <%= country %></p>
+      <img src="/images/newy.jpg" alt="img">
+    </div>
+     </section>
+    <section class="two">
+      <nav>
+        <h1 class="today">Today</h1>
+        <div class="degrees">
+        <div class="circle c1"><p>°C</p></div>
+        <div class="circle c2"><p>°F</p></div>
+        <div class="time"><p id="clock"><%= time %></p></div>
+        </div>
+      </nav>
+   
+     <div class="boxes">
+     <div class="box1">
+      <h2>Description : <span><%= weatherDescription %></span></h2>
+      <p><i style="font-size:24px; padding-top: 5px;" class="fa">&#xf0f1;</i><span><%= healthTip %></span></p>
+     </div>
+     <div class="box1">
+      <h2>Report an Issue</h2>
+      <p><i style='font-size:24px; padding-top: 2px;' class='fa'>&#xf27a;</i> Report an Issue:<span>
+        You can describe the current conditions at your location to help improve forcasts.</span></p>
+     </div>
+     <div class="map" style="width: 280px;">
+
+      <img src="<%= mapImageURL %>" width="180px" height="140px" alt="weather map">
+     </div>
+
+    </div>
+
+    <div>
+      <h1 class="today1">Today's Highlights</h1>
+
+      <div class="griding">
+        <div class="grid-item">
+          <h4 class="grid-head">Min | Max Temperature</h4>
+          <div class="flex-desc">
+          <img class="images" src="/images/temperature.png" alt="temp">
+          <p class="grid-main-desc"><%= minTemp %>° | <%= maxTemp %>°</p>
+          </div>
+      </div>
+      <div class="grid-item">
+          <h4 class="grid-head">Wind Status</h4>
+          <div class="flex-desc">
+          <div class="flex">
+          <p class="grid-main-desc desc-grid-sec"><%= windStatus %></p>
+          <p class="km">km/hr</p>
+          </div>
+          <img class="image2" src="/images/storm (1).png" alt="wind">
+          </div>
+      </div>
+        <div class="grid-item">
+          <h4 class="grid-head">Sunrise & Sunset</h4>
+          <div class="sunflex">
+            <img class="image3" src="/images/up-arrow (1).png" alt="sun">
+            <p class="sundesc"><%= sunriseTime %> AM</p>
+          </div>
+          <div class="sunflex" style="padding-top: 2px;">
+            <img class="image3" src="/images/down-arrow.png" alt="sun">
+            <p class="sundesc"><%= sunsetTime %> PM</p>
+          </div>
+        </div>
+        <div class="grid-item">
+          <h4 class="grid-head">Humidity</h4>
+          <div class="flex-desc">
+            <div class="flex">
+            <p class="grid-main-desc2 desc-grid-sec"><%= humidity %></p>
+            <p class="km2">%</p>
+            </div>
+            <img class="image4" src="/images/humidity.png" alt="wind">
+          </div>
+        </div>
+        <div class="grid-item">
+          <h4 class="grid-head">Visibility</h4>
+          <div class="flex-desc">
+            <img class="images" src="/images/wind.png" alt="wind">
+          <div class="flex">
+            <p class="grid-main-desc2 visible" style="margin-left: 10px;"><%= visibility %></p>
+            <p class="km3">km</p>
+          </div>
+        </div>
+        </div>
+        <div class="grid-item">
+          <h4 class="grid-head">Pressure</h4>
+          <div class="flex-desc">
+            <div class="flex">
+            <p class="grid-main-desc2 desc-grid-sec"><%= pressure %></p>
+            <p class="km2">hPa</p>
+            </div>
+            <img class="image4" src="/images/gauge.png" alt="wind">
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+    
+  </div>
+<!-- icons -->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+  function updateClock() {
+    const clockElement = document.getElementById('clock');
+    const now = new Date();
+
+    // Get hours, minutes, and seconds
+    let hours = now.getHours();
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+
+    // Determine AM or PM
+    const amPm = hours >= 12 ? 'PM' : 'AM';
+
+    // Convert hours to 12-hour format
+    hours = hours % 12 || 12; // If hour is 0, set it to 12 (12-hour clock)
+
+    // Format the time as hh:mm:ss AM/PM
+    const currentTime = `${hours}:${minutes}:${seconds} ${amPm}`;
+
+    // Update the clock on the page
+    clockElement.textContent = currentTime;
+  }
+
+  // Update the clock every second
+  setInterval(updateClock, 1000);
+
+  // Initial call to display the clock immediately on page load
+  updateClock();
+</script>
+<script>
+  // When the DOM is fully loaded
+  document.addEventListener("DOMContentLoaded", function () {
+    // Get the error message element
+    const errorMessage = document.querySelector(".error-message");
+    const okButton = errorMessage.querySelector("button");
+
+    // Show the error message with animation
+    setTimeout(() => {
+      errorMessage.classList.add("show"); // Add the class to make it visible with animation
+    }, 100); // Delay to trigger the transition smoothly after page load
+
+    // Add event listener to the OK button to close the error message
+      okButton.addEventListener("click", function () {
+      errorMessage.classList.remove("show");
+      errorMessage.classList.add("hide"); // Add hide class for closing transition
+
+      // Optionally remove the element from the DOM after animation finishes (e.g., 500ms)
+      setTimeout(() => {
+        errorMessage.style.display = "none"; // Remove from the display after animation
+      }, 500); // Wait for the transition to complete
+    });
+  });
+</script>
+<!-- JavaScript for updating time every minute -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Function to update the time dynamically every minute
+    function updateTime() {
+      const timeElement = document.getElementById("time");
+
+      // Get the current date and time
+      const now = new Date();
+      let hours = now.getHours();
+      let minutes = now.getMinutes().toString().padStart(2, '0');
+
+      // Determine AM or PM suffix
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12 || 12; // Convert to 12-hour format, keeping 12 as 12
+
+      // Format the time as "hh:mm AM/PM"
+      const currentTime = `${hours}:${minutes}`;
+
+      // Update the time in the <span id="time">
+      timeElement.textContent = currentTime;
+    }
+    // Call updateTime initially to set the current time on page load
+    updateTime();
+
+    setInterval(updateTime, 1000);
+  });
+</script>
+
+
+
+</body>
+</html>
